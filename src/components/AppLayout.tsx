@@ -1,9 +1,7 @@
 import React from 'react';
 import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import Drawer from '@mui/material/Drawer';
@@ -15,13 +13,11 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import Divider from '@mui/material/Divider';
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import { styled, useTheme } from '@mui/material/styles';
-import TextField from '@mui/material/TextField';
-import Stack from '@mui/material/Stack';
+import { Outlet } from 'react-router-dom';
+import { Box } from '@mui/system';
 const ButtonAppBar: React.FC<{title: string}> = ({title}) => {
   const [isDrawerOpen, setIsDrawerOpen] = React.useState<boolean>(false);
+  
   return (
     <div>
     <Drawer
@@ -31,10 +27,11 @@ const ButtonAppBar: React.FC<{title: string}> = ({title}) => {
       onClose={() => setIsDrawerOpen(false)
     }
 
-
-    
        >
+ 
+        <Divider />
 
+        
             <List>
        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
             <ListItem key={text} disablePadding>
@@ -77,7 +74,7 @@ const ButtonAppBar: React.FC<{title: string}> = ({title}) => {
           </Typography>
         </Toolbar>
       </AppBar>
-
+      <Outlet />
       </div>
 
 

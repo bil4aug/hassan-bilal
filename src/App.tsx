@@ -13,10 +13,14 @@ const App = () => {
     <StyledEngineProvider injectFirst>
       <Router>
         <Routes>
-      <Route path='/first' element={<First />} />
+          <Route path='/' element={<Bar title='Admin panel'/>}>
+          <Route index element={<Login/>} />
+          <Route path='/first' element={<First />} />
+          </Route>
+      
       <Route path='/bar' element={<Bar title='Admin panel'/>} />
       <Route path='/second' element={<Price />} />
-      <Route path='/login' element={<Login/>} />
+      
       </Routes>
   
       </Router>

@@ -8,11 +8,8 @@ import { styled } from '@mui/system';
 
 const login=()=> {
 const paperStyle = {padding:45,height :'30vh',width:280,margin:'130px auto'}
-const iconStyle = {backgroundColor:'lightBlue'}
-const styleComponent =()=>{({
-
-
-});
+const iconStyle = {backgroundColor:'lightBlue',alignSelf:'center'}
+const componnetStyle = ()=>{
 
 
 }
@@ -20,7 +17,7 @@ const styleComponent =()=>{({
     <Grid alignItems="center" >
       
         <Paper elevation={10} style={paperStyle}>
-        <Grid alignItems='center' >                
+        <Grid style ={{alignItems:'center', justifyContent:'center',display: 'flex',flexDirection:'column'}}>                
         <Avatar style={iconStyle}><LockPersonOutlinedIcon/></Avatar>
         <h2>Login</h2>
         </Grid>
